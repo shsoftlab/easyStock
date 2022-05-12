@@ -23,7 +23,7 @@ export default {
           name: "",
           path: "",
           children: [],
-        };
+        }
       },
       description:
         "Sidebar link. Can contain name, path, icon and other attributes. See examples for more info",
@@ -38,7 +38,7 @@ export default {
     return {
       children: [],
       collapsed: true,
-    };
+    }
   },
   methods: {
     linkClick() {
@@ -47,9 +47,9 @@ export default {
         this.$sidebar &&
         this.$sidebar.showSidebar === true
       ) {
-        this.$sidebar.displaySidebar(false);
+        this.$sidebar.displaySidebar(false)
       }
     },
   },
-};
+}
 </script>

@@ -96,18 +96,18 @@ export default {
         { "btn-icon": this.icon || this.$slots.icon },
         this.type && !this.outline ? `btn-${this.type}` : "",
         this.outline ? `btn-outline-${this.type}` : "",
-      ];
+      ]
       if (this.size) {
-        btnClasses.push(`btn-${this.size}`);
+        btnClasses.push(`btn-${this.size}`)
       }
-      return btnClasses;
+      return btnClasses
     },
   },
   methods: {
     handleClick(evt) {
-      this.$emit("click", evt);
+      this.$emit("click", evt)
     },
   },
-};
+}
 </script>
 <style></style>

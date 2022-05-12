@@ -89,8 +89,8 @@ export default {
           bounceRateDirection: "down",
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 <style></style>

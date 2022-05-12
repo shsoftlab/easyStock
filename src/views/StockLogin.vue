@@ -13,10 +13,10 @@
 export default {
   name: "StockLogin",
   data: function () {
-    return {};
+    return {}
   },
   methods: {},
-};
+}
 </script>
 
 <style>

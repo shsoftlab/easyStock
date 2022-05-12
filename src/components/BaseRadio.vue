@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import { randomString } from "./stringUtils";
+import { randomString } from "./stringUtils"
 export default {
   name: "base-radio",
   props: {
@@ -41,26 +41,26 @@ export default {
   data() {
     return {
       cbId: "",
-    };
+    }
   },
   computed: {
     model: {
       get() {
-        return this.value;
+        return this.value
       },
       set(value) {
-        this.$emit("input", value);
+        this.$emit("input", value)
       },
     },
     inlineClass() {
       if (this.inline) {
-        return `form-check-inline`;
+        return `form-check-inline`
       }
-      return "";
+      return ""
     },
   },
   mounted() {
-    this.cbId = randomString();
+    this.cbId = randomString()
   },
-};
+}
 </script>

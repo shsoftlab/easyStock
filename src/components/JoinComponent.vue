@@ -42,8 +42,8 @@
 </template>
 
 <script>
-import JoinHsptComponent from "./JoinHsptComponent.vue";
-import JoinMemberComponent from "./JoinMemberComponent.vue";
+import JoinHsptComponent from "./JoinHsptComponent.vue"
+import JoinMemberComponent from "./JoinMemberComponent.vue"
 
 export default {
   data() {
@@ -51,26 +51,26 @@ export default {
       isHospitalJoin: true,
       isMemberJoin: false,
       countTabClick: 1,
-    };
+    }
   },
   methods: {
     selectJoinType(type) {
       if (type == 0) {
-        this.isHospitalJoin = true;
-        this.isMemberJoin = false;
+        this.isHospitalJoin = true
+        this.isMemberJoin = false
       } else {
-        this.isHospitalJoin = false;
-        this.isMemberJoin = true;
+        this.isHospitalJoin = false
+        this.isMemberJoin = true
       }
 
-      this.countTabClick++;
+      this.countTabClick++
     },
   },
   components: {
     JoinHsptComponent,
     JoinMemberComponent,
   },
-};
+}
 </script>
 
 <style>

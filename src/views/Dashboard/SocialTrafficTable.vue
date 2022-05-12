@@ -79,8 +79,8 @@ export default {
           progressType: "gradient-warning",
         },
       ],
-    };
+    }
   },
-};
+}
 </script>
 <style></style>

@@ -134,7 +134,7 @@
   </nav>
 </template>
 <script>
-import NavbarToggleButton from "@/components/NavbarToggleButton";
+import NavbarToggleButton from "@/components/NavbarToggleButton"
 
 export default {
   name: "sidebar",
@@ -157,20 +157,20 @@ export default {
   provide() {
     return {
       autoClose: this.autoClose,
-    };
+    }
   },
   methods: {
     closeSidebar() {
-      this.$sidebar.displaySidebar(false);
+      this.$sidebar.displaySidebar(false)
     },
     showSidebar() {
-      this.$sidebar.displaySidebar(true);
+      this.$sidebar.displaySidebar(true)
     },
   },
   beforeUnmount() {
     if (this.$sidebar.showSidebar) {
-      this.$sidebar.showSidebar = false;
+      this.$sidebar.showSidebar = false
     }
   },
-};
+}
 </script>

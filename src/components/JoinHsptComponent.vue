@@ -144,7 +144,7 @@
 </template>
 
 <script>
-import shsoftlab from "../js/shsoftlab";
+import shsoftlab from "../js/shsoftlab"
 
 export default {
   data() {
@@ -154,7 +154,7 @@ export default {
       inputAddressDetail: "",
       tel: "",
       email: "",
-    };
+    }
   },
 
   props: {
@@ -179,36 +179,36 @@ export default {
             addressDetail: this.inputAddressDetail,
             tel: this.tel,
             email: this.email,
-          }
-        );
+          },
+        )
         if (result.data.affectedRows == "1") {
-          alert("가입 신청이 완료되었습니다.");
-          this.goBack();
+          alert("가입 신청이 완료되었습니다.")
+          this.goBack()
         }
       } else {
-        alert("모든 내용을 입력하세요");
+        alert("모든 내용을 입력하세요")
       }
     },
 
     getPhoneMask(val) {
-      let res = this.getMask(val);
-      this.tel = res;
+      let res = this.getMask(val)
+      this.tel = res
       //서버 전송 값에는 '-' 를 제외하고 숫자만 저장
-      this.model.tel = this.tel.replace(/[^0-9]/g, "");
+      this.model.tel = this.tel.replace(/[^0-9]/g, "")
     },
 
     getMask(phoneNumber) {
-      if (!phoneNumber) return phoneNumber;
-      phoneNumber = phoneNumber.replace(/[^0-9]/g, "");
+      if (!phoneNumber) return phoneNumber
+      phoneNumber = phoneNumber.replace(/[^0-9]/g, "")
 
-      let res = "";
+      let res = ""
       if (phoneNumber.length < 3) {
-        res = phoneNumber;
+        res = phoneNumber
       } else {
         if (phoneNumber.substr(0, 2) == "02") {
           if (phoneNumber.length <= 5) {
             //02-123-5678
-            res = phoneNumber.substr(0, 2) + "-" + phoneNumber.substr(2, 3);
+            res = phoneNumber.substr(0, 2) + "-" + phoneNumber.substr(2, 3)
           } else if (phoneNumber.length > 5 && phoneNumber.length <= 9) {
             //02-123-5678
             res =
@@ -216,7 +216,7 @@ export default {
               "-" +
               phoneNumber.substr(2, 3) +
               "-" +
-              phoneNumber.substr(5);
+              phoneNumber.substr(5)
           } else if (phoneNumber.length > 9) {
             //02-1234-5678
             res =
@@ -224,27 +224,27 @@ export default {
               "-" +
               phoneNumber.substr(2, 4) +
               "-" +
-              phoneNumber.substr(6);
+              phoneNumber.substr(6)
           }
         } else {
           if (phoneNumber.length < 8) {
-            res = phoneNumber;
+            res = phoneNumber
           } else if (phoneNumber.length == 8) {
-            res = phoneNumber.substr(0, 4) + "-" + phoneNumber.substr(4);
+            res = phoneNumber.substr(0, 4) + "-" + phoneNumber.substr(4)
           } else if (phoneNumber.length == 9) {
             res =
               phoneNumber.substr(0, 3) +
               "-" +
               phoneNumber.substr(3, 3) +
               "-" +
-              phoneNumber.substr(6);
+              phoneNumber.substr(6)
           } else if (phoneNumber.length == 10) {
             res =
               phoneNumber.substr(0, 3) +
               "-" +
               phoneNumber.substr(3, 3) +
               "-" +
-              phoneNumber.substr(6);
+              phoneNumber.substr(6)
           } else if (phoneNumber.length > 10) {
             //010-1234-5678
             res =
@@ -252,27 +252,27 @@ export default {
               "-" +
               phoneNumber.substr(3, 4) +
               "-" +
-              phoneNumber.substr(7);
+              phoneNumber.substr(7)
           }
         }
       }
 
-      return res;
+      return res
     },
 
     getAddressKakao: function () {
       new window.daum.Postcode({
-        oncomplete: (data) => {
+        oncomplete: data => {
           if (this.extraAddress !== "") {
-            this.extraAddress = "";
+            this.extraAddress = ""
           }
 
           if (data.userSelectedType === "R") {
             // 사용자가 도로명 주소를 선택했을 경우
-            this.inputAddress = data.roadAddress;
+            this.inputAddress = data.roadAddress
           } else {
             // 사용자가 지번 주소를 선택했을 경우(J)
-            this.inputAddress = data.jibunAddress;
+            this.inputAddress = data.jibunAddress
           }
 
           // 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
@@ -294,20 +294,20 @@ export default {
             //     this.extraAddress = `(${this.extraAddress})`;
             // }
           } else {
-            this.extraAddress = "";
+            this.extraAddress = ""
           }
 
           // 우편번호를 입력한다.
           //this.postcode = data.zonecode;
         },
-      }).open();
+      }).open()
     },
 
     goBack() {
-      return this.$router.go(this.clickCount * -1);
+      return this.$router.go(this.clickCount * -1)
     },
   },
-};
+}
 </script>
 
 <style>

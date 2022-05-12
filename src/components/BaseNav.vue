@@ -37,7 +37,7 @@
   </nav>
 </template>
 <script>
-import NavbarToggleButton from "./NavbarToggleButton";
+import NavbarToggleButton from "./NavbarToggleButton"
 
 export default {
   name: "base-nav",
@@ -83,13 +83,13 @@ export default {
   data() {
     return {
       toggled: false,
-    };
+    }
   },
   methods: {
     closeMenu() {
-      this.toggled = false;
+      this.toggled = false
     },
   },
-};
+}
 </script>
 <style></style>

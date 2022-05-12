@@ -149,12 +149,12 @@
 </template>
 <script>
 // Charts
-import { ordersChart } from "@/components/Charts/Chart";
-import Chart from "chart.js";
+import { ordersChart } from "@/components/Charts/Chart"
+import Chart from "chart.js"
 
-import PageVisitsTable from "./Dashboard/PageVisitsTable";
-import SocialTrafficTable from "./Dashboard/SocialTrafficTable";
-let chart;
+import PageVisitsTable from "./Dashboard/PageVisitsTable"
+import SocialTrafficTable from "./Dashboard/SocialTrafficTable"
+let chart
 
 export default {
   components: {
@@ -172,11 +172,11 @@ export default {
         ],
         activeIndex: 0,
       },
-    };
+    }
   },
   methods: {
     initBigChart(index) {
-      chart.destroy();
+      chart.destroy()
       chart = new Chart(
         document.getElementById(this.salesChartID).getContext("2d"),
         {
@@ -244,9 +244,9 @@ export default {
               padding: 0,
             },
           },
-        }
-      );
-      this.bigLineChart.activeIndex = index;
+        },
+      )
+      this.bigLineChart.activeIndex = index
     },
   },
   mounted() {
@@ -317,10 +317,10 @@ export default {
             padding: 0,
           },
         },
-      }
-    );
-    ordersChart.createChart(this.ordersChartID);
+      },
+    )
+    ordersChart.createChart(this.ordersChartID)
   },
-};
+}
 </script>
 <style></style>

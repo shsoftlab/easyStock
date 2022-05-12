@@ -70,8 +70,8 @@
   </div>
 </template>
 <script>
-import DashboardNavbar from "./DashboardNavbar.vue";
-import ContentFooter from "./ContentFooter.vue";
+import DashboardNavbar from "./DashboardNavbar.vue"
+import ContentFooter from "./ContentFooter.vue"
 
 export default {
   components: {
@@ -81,15 +81,15 @@ export default {
   data() {
     return {
       sidebarBackground: "vue", //vue|blue|orange|green|red|primary
-    };
+    }
   },
   methods: {
     toggleSidebar() {
       if (this.$sidebar.showSidebar) {
-        this.$sidebar.displaySidebar(false);
+        this.$sidebar.displaySidebar(false)
       }
     },
   },
-};
+}
 </script>
 <style lang="scss"></style>

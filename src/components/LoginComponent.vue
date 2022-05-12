@@ -93,7 +93,7 @@
 </template>
 
 <script>
-import shsoftlab from "../js/shsoftlab";
+import shsoftlab from "../js/shsoftlab"
 
 export default {
   methods: {
@@ -109,18 +109,21 @@ export default {
             userId: this.userId,
             password: this.userPassword,
           })
-          .then((result) => {
+          .then(result => {
             if (result.status == 201) {
               this.$router.push({
                 name: "main",
                 params: { productId: "P0002" },
-              });
+              })
             } else {
-              alert("로그인 실패");
+              alert("로그인 실패")
             }
-          });
+          })
+          .catch(() => {
+            alert("로그인 정보를 확인해 주세요")
+          })
       } else {
-        alert("로그인 정보를 입력하세요");
+        alert("로그인 정보를 입력하세요")
       }
     },
   },
@@ -130,9 +133,9 @@ export default {
       hospitalsrno: "",
       userId: "",
       userPassword: "",
-    };
+    }
   },
-};
+}
 </script>
 
 <style></style>

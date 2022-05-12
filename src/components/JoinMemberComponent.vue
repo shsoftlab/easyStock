@@ -213,7 +213,7 @@
 </template>
 
 <script>
-import shsoftlab from "../js/shsoftlab";
+import shsoftlab from "../js/shsoftlab"
 
 export default {
   data() {
@@ -230,7 +230,7 @@ export default {
       positions: {},
       validHospitalSrno: false,
       validUserId: false,
-    };
+    }
   },
 
   props: {
@@ -238,25 +238,25 @@ export default {
   },
 
   mounted() {
-    this.readPublicDepartments().then((result) => {
-      this.departements = result.data;
-    });
+    this.readPublicDepartments().then(result => {
+      this.departements = result.data
+    })
 
-    this.readPublicPositions().then((result) => {
-      this.positions = result.data;
-    });
+    this.readPublicPositions().then(result => {
+      this.positions = result.data
+    })
   },
 
   methods: {
     async joinSubmit() {
       if (!this.validHospitalSrno) {
-        alert("기관코드를 조회해 주세요.");
-        return;
+        alert("기관코드를 조회해 주세요.")
+        return
       }
 
       if (!this.validUserId) {
-        alert("ID를 조회해 주세요");
-        return;
+        alert("ID를 조회해 주세요")
+        return
       }
 
       const result = await shsoftlab.requestData("post", "/api/member/join", {
@@ -267,11 +267,11 @@ export default {
         position: this.position,
         department: this.department,
         email: this.email,
-      });
+      })
 
       if (result.data.affectedRows == "1") {
-        alert("가입 신청이 완료되었습니다. 관리자 승인 후 사용 가능합니다.");
-        this.goBack();
+        alert("가입 신청이 완료되었습니다. 관리자 승인 후 사용 가능합니다.")
+        this.goBack()
       }
     },
 
@@ -280,18 +280,18 @@ export default {
         const result = await shsoftlab.requestData(
           "get",
           `/api/member/read/${this.userId}`,
-          ""
-        );
+          "",
+        )
         if (result.data.length > 0) {
-          this.validUserId = false;
-          alert("동일한 ID가 존재 합니다.");
+          this.validUserId = false
+          alert("동일한 ID가 존재 합니다.")
         } else {
-          this.validUserId = true;
-          alert("등록 가능한 ID 입니다.");
+          this.validUserId = true
+          alert("등록 가능한 ID 입니다.")
         }
       } else {
-        this.validUserId = false;
-        alert("ID를 입력하세요.");
+        this.validUserId = false
+        alert("ID를 입력하세요.")
       }
     },
 
@@ -300,19 +300,19 @@ export default {
         const result = await shsoftlab.requestData(
           "get",
           `/api/hospital/read/${this.hospitalsrno}`,
-          ""
-        );
+          "",
+        )
         if (result.data.length > 0) {
-          const hn = result.data[0].hospitalname;
-          this.validHospitalSrno = true;
-          alert(hn);
+          const hn = result.data[0].hospitalname
+          this.validHospitalSrno = true
+          alert(hn)
         } else {
-          this.validHospitalSrno = false;
-          alert(`기관코드 ${this.hospitalsrno} 가 존재하지 않습니다.`);
+          this.validHospitalSrno = false
+          alert(`기관코드 ${this.hospitalsrno} 가 존재하지 않습니다.`)
         }
       } else {
-        this.validHospitalSrno = false;
-        alert("기관코드를 입력하세요.");
+        this.validHospitalSrno = false
+        alert("기관코드를 입력하세요.")
       }
     },
 
@@ -320,12 +320,12 @@ export default {
       const result = await shsoftlab.requestData(
         "get",
         `/api/public/read/department`,
-        ""
-      );
+        "",
+      )
       if (result.data.length == 0) {
-        alert("해당 기본 코드가 없습니다.");
+        alert("해당 기본 코드가 없습니다.")
       } else {
-        return result;
+        return result
       }
     },
 
@@ -333,28 +333,28 @@ export default {
       const result = await shsoftlab.requestData(
         "get",
         `/api/public/read/position`,
-        ""
-      );
+        "",
+      )
       if (result.data.length == 0) {
-        alert("해당 기본 코드가 없습니다.");
+        alert("해당 기본 코드가 없습니다.")
       } else {
-        return result;
+        return result
       }
     },
 
     goBack() {
-      return this.$router.go(this.clickCount * -1);
+      return this.$router.go(this.clickCount * -1)
     },
 
     selDepartment(e) {
-      this.department = e.target.value;
+      this.department = e.target.value
     },
 
     selPosition(e) {
-      this.position = e.target.value;
+      this.position = e.target.value
     },
   },
-};
+}
 </script>
 
 <style>

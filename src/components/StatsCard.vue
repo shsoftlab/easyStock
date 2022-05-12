@@ -30,7 +30,7 @@
   </stock-card>
 </template>
 <script>
-import StockCard from "./StockCard.vue";
+import StockCard from "./StockCard.vue"
 
 export default {
   name: "stats-card",
@@ -47,6 +47,6 @@ export default {
     subTitle: String,
     iconClasses: [String, Array],
   },
-};
+}
 </script>
 <style></style>

@@ -43,6 +43,6 @@ export default {
       description: "Badge type (primary|info|danger|default|warning|success)",
     },
   },
-};
+}
 </script>
 <style></style>

@@ -52,22 +52,22 @@ export default {
   },
   computed: {
     tableClass() {
-      return this.type && `table-${this.type}`;
+      return this.type && `table-${this.type}`
     },
     colsWithValue() {
-      return (row) => {
-        return this.columns.filter((column) => this.hasValue(row, column));
-      };
+      return row => {
+        return this.columns.filter(column => this.hasValue(row, column))
+      }
     },
   },
   methods: {
     hasValue(item, column) {
-      return item[column.toLowerCase()] !== "undefined";
+      return item[column.toLowerCase()] !== "undefined"
     },
     itemValue(item, column) {
-      return item[column.toLowerCase()];
+      return item[column.toLowerCase()]
     },
   },
-};
+}
 </script>
 <style></style>

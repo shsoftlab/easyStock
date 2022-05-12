@@ -59,12 +59,12 @@ export default {
   data() {
     return {
       visible: true,
-    };
+    }
   },
   methods: {
     dismissAlert() {
-      this.visible = false;
+      this.visible = false
     },
   },
-};
+}
 </script>

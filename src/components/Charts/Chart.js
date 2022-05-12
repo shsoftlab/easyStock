@@ -1,14 +1,14 @@
-import Chart from "chart.js";
+import Chart from "chart.js"
 
 export const ordersChart = {
   createChart(chartId) {
-    const chartColor = "#FFFFFF";
-    const fallBackColor = "#f96332";
-    const color = this.color || fallBackColor;
-    const ctx = document.getElementById(chartId).getContext("2d");
-    const gradientStroke = ctx.createLinearGradient(500, 0, 100, 0);
-    gradientStroke.addColorStop(0, color);
-    gradientStroke.addColorStop(1, chartColor);
+    const chartColor = "#FFFFFF"
+    const fallBackColor = "#f96332"
+    const color = this.color || fallBackColor
+    const ctx = document.getElementById(chartId).getContext("2d")
+    const gradientStroke = ctx.createLinearGradient(500, 0, 100, 0)
+    gradientStroke.addColorStop(0, color)
+    gradientStroke.addColorStop(1, chartColor)
 
     new Chart(ctx, {
       type: "bar",
@@ -58,7 +58,7 @@ export const ordersChart = {
                 fontFamily: "Open Sans",
                 callback: function (value) {
                   if (!(value % 10)) {
-                    return value;
+                    return value
                   }
                 },
               },
@@ -81,12 +81,12 @@ export const ordersChart = {
           ],
         },
       },
-    });
+    })
   },
-};
+}
 
 const funcs = {
   ordersChart() {},
-};
+}
 
-export default funcs;
+export default funcs

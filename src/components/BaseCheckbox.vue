@@ -18,7 +18,7 @@
   </div>
 </template>
 <script>
-import { randomString } from "./stringUtils";
+import { randomString } from "./stringUtils"
 
 export default {
   name: "base-checkbox",
@@ -43,23 +43,23 @@ export default {
     return {
       cbId: "",
       touched: false,
-    };
+    }
   },
   computed: {
     model: {
       get() {
-        return this.checked;
+        return this.checked
       },
       set(check) {
         if (!this.touched) {
-          this.touched = true;
+          this.touched = true
         }
-        this.$emit("input", check);
+        this.$emit("input", check)
       },
     },
   },
   mounted() {
-    this.cbId = randomString();
+    this.cbId = randomString()
   },
-};
+}
 </script>

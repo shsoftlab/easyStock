@@ -63,8 +63,8 @@ export default {
       type: String,
       default: "",
       validator(value) {
-        let acceptedValues = ["", "notice", "mini"];
-        return acceptedValues.indexOf(value) !== -1;
+        let acceptedValues = ["", "notice", "mini"]
+        return acceptedValues.indexOf(value) !== -1
       },
       description: 'Modal type (notice|mini|"") ',
     },
@@ -100,21 +100,21 @@ export default {
   },
   methods: {
     closeModal() {
-      this.$emit("update:show", false);
-      this.$emit("close");
+      this.$emit("update:show", false)
+      this.$emit("close")
     },
   },
   watch: {
     show(val) {
-      let documentClasses = document.body.classList;
+      let documentClasses = document.body.classList
       if (val) {
-        documentClasses.add("modal-open");
+        documentClasses.add("modal-open")
       } else {
-        documentClasses.remove("modal-open");
+        documentClasses.remove("modal-open")
       }
     },
   },
-};
+}
 </script>
 <style>
 .modal.show {

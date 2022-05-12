@@ -1,13 +1,13 @@
-import axios from "axios";
+import axios from "axios"
 
 const methods = {
   // eslint-disable-next-line no-unused-vars
   requestData: async (type, path, requestData) => {
     if (type == "get") {
       try {
-        return await axios.get(path);
+        return await axios.get(path)
       } catch (error) {
-        console.log(error);
+        console.log(error)
       }
     } else if (type == "post") {
       // axios.post(path, requestData)
@@ -16,15 +16,15 @@ const methods = {
       //     console.log(error);
       // });
       try {
-        return await axios.post(path, requestData);
+        return await axios.post(path, requestData)
       } catch (error) {
-        return error.response;
+        return error.response
         //console.log("err : " + error);
       }
     } else if (type == "put") {
       //put
     }
   },
-};
+}
 
-export default methods;
+export default methods

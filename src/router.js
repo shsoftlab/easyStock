@@ -1,9 +1,9 @@
-import { createWebHistory, createRouter } from "vue-router";
-import StockLogin from "./views/StockLogin.vue";
-import StockMain from "./views/StockMain.vue";
-import JoinComponent from "./components/JoinComponent.vue";
-import LoginComponent from "./components/LoginComponent.vue";
-import Dashboard from "./views/Dashboard.vue";
+import { createWebHistory, createRouter } from "vue-router"
+import StockLogin from "./views/StockLogin.vue"
+import StockMain from "./views/StockMain.vue"
+import JoinComponent from "./components/JoinComponent.vue"
+import LoginComponent from "./components/LoginComponent.vue"
+import Dashboard from "./views/Dashboard.vue"
 
 const routes = [
   {
@@ -36,11 +36,11 @@ const routes = [
       },
     ],
   },
-];
+]
 
 const router = createRouter({
   history: createWebHistory(),
   routes,
-});
+})
 
-export default router;
+export default router

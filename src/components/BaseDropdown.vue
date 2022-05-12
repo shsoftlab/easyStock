@@ -77,19 +77,19 @@ export default {
   data() {
     return {
       isOpen: false,
-    };
+    }
   },
   methods: {
     toggleDropDown() {
-      this.isOpen = !this.isOpen;
-      this.$emit("change", this.isOpen);
+      this.isOpen = !this.isOpen
+      this.$emit("change", this.isOpen)
     },
     closeDropDown() {
-      this.isOpen = false;
-      this.$emit("change", this.isOpen);
+      this.isOpen = false
+      this.$emit("change", this.isOpen)
     },
   },
-};
+}
 </script>
 <style>
 .dropdown {

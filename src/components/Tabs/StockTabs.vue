@@ -41,10 +41,10 @@
 </template>
 
 <script>
-import { h } from "vue";
+import { h } from "vue"
 
-import PillsLayout from "./PillsLayout";
-import TabsLayout from "./TabsLayout";
+import PillsLayout from "./PillsLayout"
+import TabsLayout from "./TabsLayout"
 export default {
   name: "tabs",
   components: {
@@ -53,7 +53,7 @@ export default {
     TabItemContent: {
       props: ["tab"],
       render() {
-        return h("div", [this.tab.$slots.title || this.tab.title]);
+        return h("div", [this.tab.$slots.title || this.tab.title])
       },
     },
   },
@@ -61,7 +61,7 @@ export default {
     type: {
       type: String,
       default: "",
-      validator: (value) => {
+      validator: value => {
         let acceptedValues = [
           "",
           "primary",
@@ -69,8 +69,8 @@ export default {
           "success",
           "warning",
           "danger",
-        ];
-        return acceptedValues.indexOf(value) !== -1;
+        ]
+        return acceptedValues.indexOf(value) !== -1
       },
       description: "Tabs type (primary|info|danger|default|warning|success)",
     },
@@ -126,74 +126,74 @@ export default {
     return {
       addTab: this.addTab,
       removeTab: this.removeTab,
-    };
+    }
   },
   data() {
     return {
       tabs: [],
       activeTabIndex: 0,
-    };
+    }
   },
   computed: {
     layoutComponent() {
-      return this.pills ? "pills-layout" : "tabs-layout";
+      return this.pills ? "pills-layout" : "tabs-layout"
     },
     slotData() {
       return {
         activeTabIndex: this.activeTabIndex,
         tabs: this.tabs,
-      };
+      }
     },
   },
   methods: {
     findAndActivateTab(title) {
-      let tabToActivate = this.tabs.find((t) => t.title === title);
+      let tabToActivate = this.tabs.find(t => t.title === title)
       if (tabToActivate) {
-        this.activateTab(tabToActivate);
+        this.activateTab(tabToActivate)
       }
     },
     activateTab(tab) {
       if (this.handleClick) {
-        this.handleClick(tab);
+        this.handleClick(tab)
       }
-      this.deactivateTabs();
-      tab.active = true;
-      this.activeTabIndex = this.tabs.findIndex((t) => t.active);
+      this.deactivateTabs()
+      tab.active = true
+      this.activeTabIndex = this.tabs.findIndex(t => t.active)
     },
     deactivateTabs() {
-      this.tabs.forEach((tab) => {
-        tab.active = false;
-      });
+      this.tabs.forEach(tab => {
+        tab.active = false
+      })
     },
     addTab(tab) {
       if (this.activeTab === tab.name) {
-        tab.active = true;
+        tab.active = true
       }
-      this.tabs.push(tab);
+      this.tabs.push(tab)
     },
     removeTab(tab) {
-      const tabs = this.tabs;
-      const index = tabs.indexOf(tab);
+      const tabs = this.tabs
+      const index = tabs.indexOf(tab)
       if (index > -1) {
-        tabs.splice(index, 1);
+        tabs.splice(index, 1)
       }
     },
   },
   mounted() {
     this.$nextTick(() => {
       if (this.value) {
-        this.findAndActivateTab(this.value);
+        this.findAndActivateTab(this.value)
       } else {
         if (this.tabs.length > 0) {
-          this.activateTab(this.tabs[0]);
+          this.activateTab(this.tabs[0])
         }
       }
-    });
+    })
   },
   watch: {
     value(newVal) {
-      this.findAndActivateTab(newVal);
+      this.findAndActivateTab(newVal)
     },
   },
-};
+}
 </script>

@@ -17,17 +17,17 @@ export default {
   data() {
     return {
       active: false,
-    };
+    }
   },
   mounted() {
-    this.addTab(this);
+    this.addTab(this)
   },
   unmounted() {
     if (this.$el && this.$el.parentNode) {
-      this.$el.parentNode.removeChild(this.$el);
+      this.$el.parentNode.removeChild(this.$el)
     }
-    this.removeTab(this);
+    this.removeTab(this)
   },
-};
+}
 </script>
 <style></style>

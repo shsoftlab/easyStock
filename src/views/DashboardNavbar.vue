@@ -70,18 +70,18 @@ export default {
       activeNotifications: false,
       showMenu: false,
       searchQuery: "",
-    };
+    }
   },
   methods: {
     toggleSidebar() {
-      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
+      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar)
     },
     hideSidebar() {
-      this.$sidebar.displaySidebar(false);
+      this.$sidebar.displaySidebar(false)
     },
     toggleMenu() {
-      this.showMenu = !this.showMenu;
+      this.showMenu = !this.showMenu
     },
   },
-};
+}
 </script>
